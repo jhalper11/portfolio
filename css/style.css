@@ -4,7 +4,7 @@ html{
 
 body{
   font-family: 'PT Sans', sans-serif;
-  background-color: #737373;
+  background-color: #7899f5;
   font-size: 18px;
   margin: 0;
   padding: 0;
@@ -29,6 +29,21 @@ h2{
   border: 2px solid #000000;
   padding: 15px;
 }
+.container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 40vh 30vh 30vh;    
+  grid-gap: 10px;
+}
+.photo {
+  grid-area: photo;
+  background: rgb(29, 141, 25);
+}
+
+.photo>img {
+  object-fit: cover;
+  width: 100%
+}
 
 .nav li{
   display:inline;
@@ -52,7 +67,7 @@ nav a:hover{
 
 
 .skip a{
-  background: white;
+  background: rgb(29, 141, 25);
   left: 0;
   padding: 6px;
   -webkit-transition: top 1s ease-out;
@@ -70,7 +85,7 @@ nav a:hover{
 }
 
 nav{
-  background-color: #ddd;
+  background-color: rgb(29, 141, 25);
   padding: 25px 0; 
   text-align: left;
   grid-column: 1/span 7;
@@ -78,7 +93,7 @@ nav{
 }
 
 footer{
-  background-color: black;
+  background-color: orangered;
   color: white;
   padding-top: 30px;
   text-align: center;
@@ -89,13 +104,13 @@ footer{
 header{
   color: blue;
   height: 400px;              
-  background-color: gray;
+  background-color: rgb(29, 141, 25);
   grid-column: 1 / -1; 
   grid-row: 1 / auto;  
 }
 
 header p{
-  color: white;
+  color: orangered;
   font-size: 24px;
   padding: 0 100px;
   text-align: center;
@@ -145,7 +160,7 @@ li{
 }
 .header{
   display: flex;
-  color: gray;
+  color: orangered;
   background-attachment: fixed;   
   background-position: center; 
   background-repeat: no-repeat; 
@@ -164,7 +179,7 @@ li{
 
 @media all and (min-width: 800px){
   nav{
-    background-color: #dddddd;
+    background-color: rgb(29, 141, 25);
     align-self: center;
     text-align: right;
     padding: 30px 0px;
