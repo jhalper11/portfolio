@@ -21,20 +21,31 @@ h2{
   font-size: 32px;
   line-height: 1.5;
 }
+.grid{
+  display: grid;
+  margin: 20px;
+}
+.grid-item{
+  border: 2px solid #000000;
+  padding: 15px;
+}
 
-nav li{
+.nav li{
   display:inline;
   padding-right:20px;
 
 }
 
-nav a{
+.nav a{
   color: black;
   font-weight: bold;
   text-decoration: none; 
 }
 
 
+.nav a:hover{
+  text-decoration: underline;
+}
 nav a:hover{
   text-decoration: underline;
 }
@@ -75,16 +86,10 @@ footer{
   grid-row: 7/auto;
 }
 
-
-
 header{
-  background-attachment: fixed; /* Parallax effect */     
-  background-position: center;  /* Parallax effect */
-  background-repeat: no-repeat; /* Parallax effect */
-  background-size: cover;       /* Parallax effect */
-  color: white;
-  height: 400px;                /* Parallax effect */
-  background-color: #000000;
+  color: blue;
+  height: 400px;              
+  background-color: gray;
   grid-column: 1 / -1; 
   grid-row: 1 / auto;  
 }
@@ -95,55 +100,22 @@ header p{
   padding: 0 100px;
   text-align: center;
 }
-
-.container{
-  display: grid;
-  grid-template-rows: repeat(5, auto);
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-row-gap: 15px;
+ul{
+  line-height: 25px;
 }
-
-.about, .method, .clients, .contact{
-  grid-column: 2/span 1;
-
-}
-
-.about-image, .method-image, .clients-image, .contact-image{
-  grid-column: 1/ -1;
-  overflow: hidden;
-  max-height: 700px;
-}
-
-.about, .about-image{
-   grid-row: 2/span 1;
-
-}
-
-.method, .method-image{
-   grid-row: 3/span 1;
-
-}
-
-
-.clients, .clients-image{
-    grid-row: 4/span 1;
-
-}
-
-
-.contact, .contact-image{
-    grid-row: 5/span 1;
+li{
+  margin-left: 30px;
+  text-indent: 0px;
 
 }
 
 .text-block{
   background-color: rgba(255, 255, 255, .8);
-  border: 10px solid black;
+  border: 10px dashed yellowgreen;
   align-self: center;
   padding: 30px;
 
 }
-
 @-webkit-keyframes logo_wiggle{
   from {width: 25px;}
   to {width: 420px;}
@@ -156,117 +128,39 @@ header p{
 
 } 
 
-#logo{
-   animation-name: logo_wiggle;
-   animation-iteration-count: 1;
-   animation-duration: 15s;
-
-}
-
-/* Cards! */
-.pricing{
-    min-height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    /*Don't forget to vertically and horizontally alight the card*/
-  
-}
-
-.card {
-  margin: 12px;
-  background: #fff;
-  border-radius: 7px;
-  padding: 0 0 50px 0;
+#contents {
   display: flex;
-  flex-basis: 400px;
-  /*Take a look at flex-basis*/
-
-}
-
-.card > header{
-  background: #288080;
-  border: 2px solid #45ADAD;
-  padding: 20px 0;
-  border-radius: 7px 7px 0 0;
-}
-
-.card > ul{
-  list-style: none;
-  padding: 0;
-}
-
-.card > ul li {
-  width: 90%;
-  margin: 20px auto;
-}
-
-.card button{
-  width: 90%;
-  height: 40px;
-  border: 0;
-  margin-left: 12px;
-  border-radius: 7px;
-  background: #288080;
-  color: white;
-  font-size: 1em;
-}
-
-.card h3{
-  font-size: 4em;
-  color: white;
-  text-align: center;
-}
-
-.card_big{
-  -webkit-transform: initial;
-          transform: initial;
-}
-
-/* Gallery! */
-.gallery{
-  min-height: 600px;
-  display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  align-items: baseline;
+  justify-content: center;
+  align-items: top;
+  flex-wrap: wrap;
+}
+.gallery{
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.header{
+  display: flex;
+  color: gray;
+  background-attachment: fixed;   
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;   
+  height: 200px;
+}
+.header h1{
+  animation-name: logo_wiggle;
+  animation-iteration-count: 1;
+  animation-duration: 15s;
+  overflow: hidden;
+  white-space: nowrap;
   justify-content: center;
 }
 
-.gallery > img{
-  border: 10px #50C7C7 solid;
-  margin: 10px;
-  width: 300px;
-}
-
-/* Navbar */
-header{
-  background: #fff;
-  border-bottom: 3px solid #50C7C7;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-}
-
-.nav_links{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.nav_item a{
-  color: black;
-  text-decoration: none;
-}
-
-.nav_item a:hover, a:focus{
-  color: #50C7C7;
-  text-decoration: underline;
-  -webkit-text-decoration-style: dotted;
-          text-decoration-style: dotted;
-}
 
 @media all and (min-width: 800px){
   nav{
@@ -293,19 +187,19 @@ header{
 }
 @media screen and (min-width: 850px){
 
-  /* Cards! */
-  .card {
+
+  .header {
     display: flex;
     flex-basis: 225px;
   }
 
-  .card_big{
+  .header h1{
     -webkit-transform: scaleX(1.12);
             transform: scaleX(1.12);
   }
 
-  /* Navbar */
-  header{
+
+  .gallery{
     display: flex; 
     justify-content: space-between;
     flex-direction: row;
@@ -333,7 +227,10 @@ header{
    }
 
 
-  header{
+  .header{
+    background-attachment: initial;
+  }
+  .header h1{
     background-attachment: initial;
   }
 }
