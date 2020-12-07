@@ -381,7 +381,7 @@ textarea{
   }
   .summary{
     display: grid;
-    height: 450px;
+    height: 520px;
     width: 1400px;
     grid-template-rows: auto;
     margin-top: 25px;
